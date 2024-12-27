@@ -19,6 +19,9 @@
 		B893097A2D0F6E5A00347293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B89309792D0F6E5A00347293 /* Assets.xcassets */; };
 		B8E794B22D1EF5D40046AAC1 /* LoginBottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E794B12D1EF5D40046AAC1 /* LoginBottomSheetViewModel.swift */; };
 		B8E794B42D1EFC840046AAC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8E794B32D1EFC840046AAC1 /* GoogleService-Info.plist */; };
+		B8E794B62D1F2F6E0046AAC1 /* ReminderFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E794B52D1F2F6E0046AAC1 /* ReminderFlowController.swift */; };
+		B8E794B82D1F315B0046AAC1 /* LoginBottomSheetFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E794B72D1F315B0046AAC1 /* LoginBottomSheetFlowDelegate.swift */; };
+		B8E794BB2D1F33E40046AAC1 /* SplashViewFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E794BA2D1F33E40046AAC1 /* SplashViewFlowDelegate.swift */; };
 		B8F814DD2D1B240500DBD722 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B8F814DB2D1B240500DBD722 /* Localizable.strings */; };
 		B8F814E32D1B257000DBD722 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F814E22D1B257000DBD722 /* String+Ext.swift */; };
 		B8F814E62D1B2F2900DBD722 /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F814E52D1B2F2900DBD722 /* PaddedTextField.swift */; };
@@ -43,6 +46,9 @@
 		B893097E2D0F6E5A00347293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8E794B12D1EF5D40046AAC1 /* LoginBottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetViewModel.swift; sourceTree = "<group>"; };
 		B8E794B32D1EFC840046AAC1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B8E794B52D1F2F6E0046AAC1 /* ReminderFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderFlowController.swift; sourceTree = "<group>"; };
+		B8E794B72D1F315B0046AAC1 /* LoginBottomSheetFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetFlowDelegate.swift; sourceTree = "<group>"; };
+		B8E794BA2D1F33E40046AAC1 /* SplashViewFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewFlowDelegate.swift; sourceTree = "<group>"; };
 		B8F814DC2D1B240500DBD722 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B8F814E22D1B257000DBD722 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		B8F814E52D1B2F2900DBD722 /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 		B88456102D11C85A00495F47 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				B8E794BA2D1F33E40046AAC1 /* SplashViewFlowDelegate.swift */,
 				B88456112D11C86600495F47 /* SplashViewController.swift */,
 				B88456132D11C96400495F47 /* SplashView.swift */,
 			);
@@ -145,6 +152,7 @@
 				B884560E2D11C83A00495F47 /* Sources */,
 				B89309702D0F6E5A00347293 /* AppDelegate.swift */,
 				B89309722D0F6E5A00347293 /* SceneDelegate.swift */,
+				B8E794B52D1F2F6E0046AAC1 /* ReminderFlowController.swift */,
 				B8E794B32D1EFC840046AAC1 /* GoogleService-Info.plist */,
 				B893097E2D0F6E5A00347293 /* Info.plist */,
 			);
@@ -154,6 +162,7 @@
 		B8E794B02D1EF5C30046AAC1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B8E794B72D1F315B0046AAC1 /* LoginBottomSheetFlowDelegate.swift */,
 				B8E794B12D1EF5D40046AAC1 /* LoginBottomSheetViewModel.swift */,
 			);
 			path = ViewModel;
@@ -308,7 +317,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8E794BB2D1F33E40046AAC1 /* SplashViewFlowDelegate.swift in Sources */,
 				B8E794B22D1EF5D40046AAC1 /* LoginBottomSheetViewModel.swift in Sources */,
+				B8E794B82D1F315B0046AAC1 /* LoginBottomSheetFlowDelegate.swift in Sources */,
 				B88456122D11C86600495F47 /* SplashViewController.swift in Sources */,
 				B82688D52D1366B900306399 /* Metrics-constants.swift in Sources */,
 				B82688D12D1312DC00306399 /* Colors-constants.swift in Sources */,
@@ -317,6 +328,7 @@
 				B88045632D1A073800632383 /* LoginBottomSheetView.swift in Sources */,
 				B89309712D0F6E5A00347293 /* AppDelegate.swift in Sources */,
 				B88045612D1A069F00632383 /* LoginBottomSheetViewController.swift in Sources */,
+				B8E794B62D1F2F6E0046AAC1 /* ReminderFlowController.swift in Sources */,
 				B82688D32D13648E00306399 /* Text-Constants.swift in Sources */,
 				B8F814E32D1B257000DBD722 /* String+Ext.swift in Sources */,
 				B8F814E82D1B6EE100DBD722 /* LoginBottomSheetViewDelegate.swift in Sources */,

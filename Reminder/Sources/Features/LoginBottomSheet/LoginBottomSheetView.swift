@@ -109,6 +109,9 @@ class LoginBottomSheetView: UIView {
         super.init(frame: frame)
         setupUI()
         
+        // APAGAR
+        emailTextField.text = "lucas.rosa@reminder.com"
+        passwordTextField.text = "123456"
         //let exampleGest = UITapGestureRecognizer(target: self, action: #selector(exampleTap))
         //titleLabel.addGestureRecognizer(exampleGest)
     }

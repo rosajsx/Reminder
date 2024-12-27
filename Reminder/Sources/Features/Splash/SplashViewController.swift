@@ -8,12 +8,22 @@
 import Foundation
 import UIKit
 
-
+// View controller cabe a decisão de navegação, alguns fluxos ou chamar o coordinator. Não cabe layout.
 class SplashViewController: UIViewController {
     
     let contentView = SplashView()
+    weak var flowDelegate: SplashViewFlowDelegate?
     
-    // View controller cabe a decisão de navegação, alguns fluxos ou chamar o coordinator. Não cabe layout.
+    
+    init(flowDelegate: SplashViewFlowDelegate){
+        self.flowDelegate = flowDelegate
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     // Ciclo de vida da tela
     // Executa quando a tela carregar
@@ -54,12 +64,7 @@ class SplashViewController: UIViewController {
    
     @objc
     private func showLoginBottomSheet(){
-        let loginButtonSheet = LoginBottomSheetViewController()
-        loginButtonSheet.modalPresentationStyle = .overCurrentContext
-        loginButtonSheet.modalTransitionStyle = .crossDissolve
-        self.present(loginButtonSheet, animated: false, completion: {
-            loginButtonSheet.animateShow()
-        })
+        self.flowDelegate?.navigateToLogin()
         
     }
     
