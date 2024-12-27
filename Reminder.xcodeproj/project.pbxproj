@@ -17,13 +17,18 @@
 		B89309712D0F6E5A00347293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89309702D0F6E5A00347293 /* AppDelegate.swift */; };
 		B89309732D0F6E5A00347293 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89309722D0F6E5A00347293 /* SceneDelegate.swift */; };
 		B893097A2D0F6E5A00347293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B89309792D0F6E5A00347293 /* Assets.xcassets */; };
+		B8E794B22D1EF5D40046AAC1 /* LoginBottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E794B12D1EF5D40046AAC1 /* LoginBottomSheetViewModel.swift */; };
+		B8E794B42D1EFC840046AAC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8E794B32D1EFC840046AAC1 /* GoogleService-Info.plist */; };
 		B8F814DD2D1B240500DBD722 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B8F814DB2D1B240500DBD722 /* Localizable.strings */; };
 		B8F814E32D1B257000DBD722 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F814E22D1B257000DBD722 /* String+Ext.swift */; };
 		B8F814E62D1B2F2900DBD722 /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F814E52D1B2F2900DBD722 /* PaddedTextField.swift */; };
 		B8F814E82D1B6EE100DBD722 /* LoginBottomSheetViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F814E72D1B6EE100DBD722 /* LoginBottomSheetViewDelegate.swift */; };
+		C66E602837B69132665DA2BB /* Pods_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23F5845B616E971B6B00BD84 /* Pods_Reminder.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23F5845B616E971B6B00BD84 /* Pods_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		585DB33905E82848FE73926A /* Pods-Reminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reminder.release.xcconfig"; path = "Target Support Files/Pods-Reminder/Pods-Reminder.release.xcconfig"; sourceTree = "<group>"; };
 		B82688D02D1312DC00306399 /* Colors-constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors-constants.swift"; sourceTree = "<group>"; };
 		B82688D22D13648E00306399 /* Text-Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text-Constants.swift"; sourceTree = "<group>"; };
 		B82688D42D1366B900306399 /* Metrics-constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Metrics-constants.swift"; sourceTree = "<group>"; };
@@ -36,10 +41,13 @@
 		B89309722D0F6E5A00347293 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B89309792D0F6E5A00347293 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B893097E2D0F6E5A00347293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8E794B12D1EF5D40046AAC1 /* LoginBottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetViewModel.swift; sourceTree = "<group>"; };
+		B8E794B32D1EFC840046AAC1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B8F814DC2D1B240500DBD722 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B8F814E22D1B257000DBD722 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		B8F814E52D1B2F2900DBD722 /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		B8F814E72D1B6EE100DBD722 /* LoginBottomSheetViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetViewDelegate.swift; sourceTree = "<group>"; };
+		F7D962E7EEDD2904095045A9 /* Pods-Reminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reminder.debug.xcconfig"; path = "Target Support Files/Pods-Reminder/Pods-Reminder.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,12 +55,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C66E602837B69132665DA2BB /* Pods_Reminder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B42171FCEB2951DD11127E80 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				23F5845B616E971B6B00BD84 /* Pods_Reminder.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B82688CF2D1312C600306399 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +83,7 @@
 		B880455F2D1A068800632383 /* LoginBottomSheet */ = {
 			isa = PBXGroup;
 			children = (
+				B8E794B02D1EF5C30046AAC1 /* ViewModel */,
 				B88045602D1A069F00632383 /* LoginBottomSheetViewController.swift */,
 				B88045622D1A073800632383 /* LoginBottomSheetView.swift */,
 				B8F814E72D1B6EE100DBD722 /* LoginBottomSheetViewDelegate.swift */,
@@ -107,6 +125,8 @@
 			children = (
 				B893096F2D0F6E5A00347293 /* Reminder */,
 				B893096E2D0F6E5A00347293 /* Products */,
+				CDDA8FE04730CAA0B3DCC05D /* Pods */,
+				B42171FCEB2951DD11127E80 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,9 +145,18 @@
 				B884560E2D11C83A00495F47 /* Sources */,
 				B89309702D0F6E5A00347293 /* AppDelegate.swift */,
 				B89309722D0F6E5A00347293 /* SceneDelegate.swift */,
+				B8E794B32D1EFC840046AAC1 /* GoogleService-Info.plist */,
 				B893097E2D0F6E5A00347293 /* Info.plist */,
 			);
 			path = Reminder;
+			sourceTree = "<group>";
+		};
+		B8E794B02D1EF5C30046AAC1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B8E794B12D1EF5D40046AAC1 /* LoginBottomSheetViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		B8F814DA2D1B23B400DBD722 /* Resources */ = {
@@ -155,6 +184,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		CDDA8FE04730CAA0B3DCC05D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F7D962E7EEDD2904095045A9 /* Pods-Reminder.debug.xcconfig */,
+				585DB33905E82848FE73926A /* Pods-Reminder.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,9 +200,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B89309812D0F6E5A00347293 /* Build configuration list for PBXNativeTarget "Reminder" */;
 			buildPhases = (
+				27FF9E1CFBF37F69F66E8DD6 /* [CP] Check Pods Manifest.lock */,
 				B89309692D0F6E5A00347293 /* Sources */,
 				B893096A2D0F6E5A00347293 /* Frameworks */,
 				B893096B2D0F6E5A00347293 /* Resources */,
+				E36D82F93468B1ED204B5F9D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -215,16 +255,60 @@
 			files = (
 				B893097A2D0F6E5A00347293 /* Assets.xcassets in Resources */,
 				B8F814DD2D1B240500DBD722 /* Localizable.strings in Resources */,
+				B8E794B42D1EFC840046AAC1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		27FF9E1CFBF37F69F66E8DD6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Reminder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E36D82F93468B1ED204B5F9D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Reminder/Pods-Reminder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Reminder/Pods-Reminder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Reminder/Pods-Reminder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B89309692D0F6E5A00347293 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8E794B22D1EF5D40046AAC1 /* LoginBottomSheetViewModel.swift in Sources */,
 				B88456122D11C86600495F47 /* SplashViewController.swift in Sources */,
 				B82688D52D1366B900306399 /* Metrics-constants.swift in Sources */,
 				B82688D12D1312DC00306399 /* Colors-constants.swift in Sources */,
@@ -375,6 +459,7 @@
 		};
 		B89309822D0F6E5A00347293 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7D962E7EEDD2904095045A9 /* Pods-Reminder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -401,6 +486,7 @@
 		};
 		B89309832D0F6E5A00347293 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 585DB33905E82848FE73926A /* Pods-Reminder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
