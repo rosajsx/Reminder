@@ -43,7 +43,7 @@ class LoginBottomSheetView: UIView {
         text.textColor = Colors.gray200
         
         text.attributedPlaceholder = NSAttributedString(string: "login.email.placeholder".localized, attributes: [NSAttributedString.Key.foregroundColor: Colors.gray200])
-        
+        text.autocapitalizationType = .none
         
         text.font = Typography.input
         text.borderStyle = .roundedRect
