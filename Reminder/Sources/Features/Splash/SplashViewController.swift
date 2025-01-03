@@ -50,7 +50,7 @@ class SplashViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         self.view.backgroundColor = Colors.primaryRedBase
         setupConstraints()
-        setupGesture()
+        //setupGesture()
     }
     
     
@@ -67,10 +67,10 @@ class SplashViewController: UIViewController {
 
     }
     
-    private func setupGesture(){
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showLoginBottomSheet))
-        self.view.addGestureRecognizer(tapGesture)
-    }
+//    private func setupGesture(){
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showLoginBottomSheet))
+//        self.view.addGestureRecognizer(tapGesture)
+//    }
     
    
     @objc

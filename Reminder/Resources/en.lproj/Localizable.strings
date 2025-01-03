@@ -13,6 +13,7 @@
 "login.password.label" = "Senha";
 "login.password.placeholder" = "senha";
 "login.button.title" = "Entrar";
+"login.button.isLoading" = "Carregando...";
 
 
 /* MARK: - Home SCREEN */

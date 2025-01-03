@@ -62,6 +62,27 @@ class LoginBottomSheetViewController: UIViewController {
             self?.presentSaveLoginAlert(email: usernameLogin)
             //self?.flowDelegate?.navigateToHome()
         }
+        
+        viewModel.errorResult = { [weak self] errorMessage in
+            self?.presentErrorAlert(message: errorMessage)
+        }
+    }
+    
+    private func presentErrorAlert(message: String) {
+        let alertController = UIAlertController(title: "Erro ao logar",
+                                                message: message,
+                                                preferredStyle: .alert)
+        
+        let retryAction = UIAlertAction(title: "Tentar novamente", style: .default) {_ in
+            self.contentView.loginButton.isEnabled = true
+            self.contentView.loginButton.setTitle("login.button.title".localized, for: .normal)
+            self.contentView.passwordTextField.isEnabled = false
+            self.contentView.emailTextField.isEnabled = false
+            
+        }
+        
+        alertController.addAction(retryAction)
+        self.present(alertController, animated: true)
     }
     
     private func presentSaveLoginAlert(email: String){
@@ -106,6 +127,11 @@ class LoginBottomSheetViewController: UIViewController {
 
 extension LoginBottomSheetViewController: LoginBottomSheetViewDelegate {
     func sendLoginData(user: String, password: String) {
+        self.contentView.loginButton.isEnabled = false
+        self.contentView.loginButton.setTitle("login.button.isLoading".localized, for: .normal)
+        self.contentView.passwordTextField.isEnabled = false
+        self.contentView.emailTextField.isEnabled = false
+        
         viewModel.doAuth(usernameLogin: user, password: password)
     }
 

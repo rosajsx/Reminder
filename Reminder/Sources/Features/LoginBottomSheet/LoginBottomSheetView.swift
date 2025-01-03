@@ -37,7 +37,7 @@ class LoginBottomSheetView: UIView {
         return label
     }()
     
-    private let emailTextField: PaddedTextField = {
+     let emailTextField: PaddedTextField = {
         let text = PaddedTextField()
         text.setPadding(newPadding: UIEdgeInsets(top: 18.5, left: 16, bottom: 18.5, right: 16))
         text.textColor = Colors.gray200
@@ -68,7 +68,7 @@ class LoginBottomSheetView: UIView {
         return label
     }()
     
-    private let passwordTextField: PaddedTextField = {
+     let passwordTextField: PaddedTextField = {
         let text = PaddedTextField()
         text.setPadding(newPadding: UIEdgeInsets(top: 18.5, left: 16, bottom: 18.5, right: 16))
         text.font = Typography.input
@@ -93,7 +93,7 @@ class LoginBottomSheetView: UIView {
         return image
     }()
     
-    private let loginButton: UIButton = {
+     let loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("login.button.title".localized, for: .normal)
         button.tintColor = Colors.gray800
