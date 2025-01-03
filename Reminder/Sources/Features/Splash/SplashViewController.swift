@@ -11,11 +11,12 @@ import UIKit
 // View controller cabe a decisão de navegação, alguns fluxos ou chamar o coordinator. Não cabe layout.
 class SplashViewController: UIViewController {
     
-    let contentView = SplashView()
+    let contentView: SplashView
     weak var flowDelegate: SplashViewFlowDelegate?
     
     
-    init(flowDelegate: SplashViewFlowDelegate){
+    init(contentView: SplashView, flowDelegate: SplashViewFlowDelegate){
+        self.contentView = contentView
         self.flowDelegate = flowDelegate
         super.init(nibName: nil, bundle: nil)
     }
@@ -64,7 +65,7 @@ class SplashViewController: UIViewController {
    
     @objc
     private func showLoginBottomSheet(){
-        self.flowDelegate?.navigateToLogin()
+        self.flowDelegate?.openLoginBottomSheet()
         
     }
     
