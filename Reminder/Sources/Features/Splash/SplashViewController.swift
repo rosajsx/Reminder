@@ -31,8 +31,21 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
+        
+   
+        decideNavigationFlow()
         setup()
         
+    }
+    
+    private func decideNavigationFlow(){
+        //Verifica se existe um usuário e ai cria ele, se existir se o isUserSaved true entra na closure.
+        if let user =  UserDefaultsManager.loadUser(), user.isUserSaved {
+            flowDelegate?.navigateHome()
+        } else {
+            showLoginBottomSheet()
+        }
     }
     
     private func setup(){

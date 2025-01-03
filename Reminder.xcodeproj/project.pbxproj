@@ -12,6 +12,8 @@
 		B82688D52D1366B900306399 /* Metrics-constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82688D42D1366B900306399 /* Metrics-constants.swift */; };
 		B85839D32D28554300294964 /* ViewControllersFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85839D22D28554300294964 /* ViewControllersFactoryProtocol.swift */; };
 		B85839D52D2855AE00294964 /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85839D42D2855AE00294964 /* ViewControllersFactory.swift */; };
+		B85839D82D285E1700294964 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85839D72D285E1700294964 /* User.swift */; };
+		B85839DB2D285E8F00294964 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85839DA2D285E8F00294964 /* UserDefaultsManager.swift */; };
 		B88045612D1A069F00632383 /* LoginBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88045602D1A069F00632383 /* LoginBottomSheetViewController.swift */; };
 		B88045632D1A073800632383 /* LoginBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88045622D1A073800632383 /* LoginBottomSheetView.swift */; };
 		B88456122D11C86600495F47 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88456112D11C86600495F47 /* SplashViewController.swift */; };
@@ -39,6 +41,8 @@
 		B82688D42D1366B900306399 /* Metrics-constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Metrics-constants.swift"; sourceTree = "<group>"; };
 		B85839D22D28554300294964 /* ViewControllersFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersFactoryProtocol.swift; sourceTree = "<group>"; };
 		B85839D42D2855AE00294964 /* ViewControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
+		B85839D72D285E1700294964 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B85839DA2D285E8F00294964 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		B88045602D1A069F00632383 /* LoginBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetViewController.swift; sourceTree = "<group>"; };
 		B88045622D1A073800632383 /* LoginBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetView.swift; sourceTree = "<group>"; };
 		B88456112D11C86600495F47 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +111,22 @@
 			path = ViewControllersFactory;
 			sourceTree = "<group>";
 		};
+		B85839D62D285E0900294964 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B85839D72D285E1700294964 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B85839D92D285E8100294964 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				B85839DA2D285E8F00294964 /* UserDefaultsManager.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
 		B880455F2D1A068800632383 /* LoginBottomSheet */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +149,8 @@
 		B884560F2D11C85400495F47 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				B85839D92D285E8100294964 /* UserDefaults */,
+				B85839D62D285E0900294964 /* Model */,
 				B85839CD2D2854FF00294964 /* DepencyInjection */,
 				B8F814E42D1B2F1500DBD722 /* Components */,
 				B8F814DE2D1B254300DBD722 /* Extensions */,
@@ -345,6 +367,7 @@
 				B88456122D11C86600495F47 /* SplashViewController.swift in Sources */,
 				B82688D52D1366B900306399 /* Metrics-constants.swift in Sources */,
 				B82688D12D1312DC00306399 /* Colors-constants.swift in Sources */,
+				B85839DB2D285E8F00294964 /* UserDefaultsManager.swift in Sources */,
 				B8F814E62D1B2F2900DBD722 /* PaddedTextField.swift in Sources */,
 				B88456142D11C96400495F47 /* SplashView.swift in Sources */,
 				B88045632D1A073800632383 /* LoginBottomSheetView.swift in Sources */,
@@ -357,6 +380,7 @@
 				B8F814E82D1B6EE100DBD722 /* LoginBottomSheetViewDelegate.swift in Sources */,
 				B89309732D0F6E5A00347293 /* SceneDelegate.swift in Sources */,
 				B85839D32D28554300294964 /* ViewControllersFactoryProtocol.swift in Sources */,
+				B85839D82D285E1700294964 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

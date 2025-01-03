@@ -11,7 +11,7 @@ import Firebase
 // Responsavel pela camada das regras de negócios.
 
 class LoginBottomSheetViewModel {
-    var successResult: (() -> Void)?
+    var successResult: ((String) -> Void)?
     
     func doAuth(usernameLogin: String, password: String){
         print(usernameLogin, password)
@@ -20,7 +20,7 @@ class LoginBottomSheetViewModel {
                
                 print("Autenticação falhou! \(error)")
             } else {
-                self?.successResult?()
+                self?.successResult?(usernameLogin)
                 print(authResult)
             }
         }
