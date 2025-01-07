@@ -17,6 +17,8 @@
 
 
 /* MARK: - Home SCREEN */
+"home.welcome.label" = "Boas Vindas";
+"home.feedback.button.title" = "Avaliar";
 
 /* MARK: - Receipt SCREEN */
 

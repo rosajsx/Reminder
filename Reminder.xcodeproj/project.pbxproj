@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		913A51DC2D2D53490060CA59 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A51DB2D2D53490060CA59 /* HomeViewController.swift */; };
+		913A51DE2D2D53660060CA59 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A51DD2D2D53630060CA59 /* HomeView.swift */; };
+		913A51E02D2D53B90060CA59 /* HomeFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A51DF2D2D53B90060CA59 /* HomeFlowDelegate.swift */; };
+		913A51E22D2D55720060CA59 /* ViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A51E12D2D556A0060CA59 /* ViewController+Ext.swift */; };
 		B82688D12D1312DC00306399 /* Colors-constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82688D02D1312DC00306399 /* Colors-constants.swift */; };
 		B82688D32D13648E00306399 /* Text-Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82688D22D13648E00306399 /* Text-Constants.swift */; };
 		B82688D52D1366B900306399 /* Metrics-constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82688D42D1366B900306399 /* Metrics-constants.swift */; };
@@ -36,6 +40,10 @@
 /* Begin PBXFileReference section */
 		23F5845B616E971B6B00BD84 /* Pods_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		585DB33905E82848FE73926A /* Pods-Reminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reminder.release.xcconfig"; path = "Target Support Files/Pods-Reminder/Pods-Reminder.release.xcconfig"; sourceTree = "<group>"; };
+		913A51DB2D2D53490060CA59 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		913A51DD2D2D53630060CA59 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		913A51DF2D2D53B90060CA59 /* HomeFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlowDelegate.swift; sourceTree = "<group>"; };
+		913A51E12D2D556A0060CA59 /* ViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Ext.swift"; sourceTree = "<group>"; };
 		B82688D02D1312DC00306399 /* Colors-constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors-constants.swift"; sourceTree = "<group>"; };
 		B82688D22D13648E00306399 /* Text-Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text-Constants.swift"; sourceTree = "<group>"; };
 		B82688D42D1366B900306399 /* Metrics-constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Metrics-constants.swift"; sourceTree = "<group>"; };
@@ -76,6 +84,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		913A51D72D2D52F60060CA59 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				913A51D82D2D53170060CA59 /* Home */,
+				B880455F2D1A068800632383 /* LoginBottomSheet */,
+				B88456102D11C85A00495F47 /* Splash */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		913A51D82D2D53170060CA59 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				913A51D92D2D53230060CA59 /* ViewModel */,
+				913A51DD2D2D53630060CA59 /* HomeView.swift */,
+				913A51DB2D2D53490060CA59 /* HomeViewController.swift */,
+				913A51DF2D2D53B90060CA59 /* HomeFlowDelegate.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		913A51D92D2D53230060CA59 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		B42171FCEB2951DD11127E80 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,14 +185,13 @@
 		B884560F2D11C85400495F47 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				913A51D72D2D52F60060CA59 /* Scenes */,
 				B85839D92D285E8100294964 /* UserDefaults */,
 				B85839D62D285E0900294964 /* Model */,
 				B85839CD2D2854FF00294964 /* DepencyInjection */,
 				B8F814E42D1B2F1500DBD722 /* Components */,
 				B8F814DE2D1B254300DBD722 /* Extensions */,
-				B880455F2D1A068800632383 /* LoginBottomSheet */,
 				B82688CF2D1312C600306399 /* Constants */,
-				B88456102D11C85A00495F47 /* Splash */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -224,6 +259,7 @@
 		B8F814DE2D1B254300DBD722 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				913A51E12D2D556A0060CA59 /* ViewController+Ext.swift */,
 				B8F814E22D1B257000DBD722 /* String+Ext.swift */,
 			);
 			path = Extensions;
@@ -366,12 +402,16 @@
 				B8E794B82D1F315B0046AAC1 /* LoginBottomSheetFlowDelegate.swift in Sources */,
 				B88456122D11C86600495F47 /* SplashViewController.swift in Sources */,
 				B82688D52D1366B900306399 /* Metrics-constants.swift in Sources */,
+				913A51DE2D2D53660060CA59 /* HomeView.swift in Sources */,
+				913A51E02D2D53B90060CA59 /* HomeFlowDelegate.swift in Sources */,
+				913A51DC2D2D53490060CA59 /* HomeViewController.swift in Sources */,
 				B82688D12D1312DC00306399 /* Colors-constants.swift in Sources */,
 				B85839DB2D285E8F00294964 /* UserDefaultsManager.swift in Sources */,
 				B8F814E62D1B2F2900DBD722 /* PaddedTextField.swift in Sources */,
 				B88456142D11C96400495F47 /* SplashView.swift in Sources */,
 				B88045632D1A073800632383 /* LoginBottomSheetView.swift in Sources */,
 				B89309712D0F6E5A00347293 /* AppDelegate.swift in Sources */,
+				913A51E22D2D55720060CA59 /* ViewController+Ext.swift in Sources */,
 				B88045612D1A069F00632383 /* LoginBottomSheetViewController.swift in Sources */,
 				B85839D52D2855AE00294964 /* ViewControllersFactory.swift in Sources */,
 				B8E794B62D1F2F6E0046AAC1 /* ReminderFlowController.swift in Sources */,
