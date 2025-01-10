@@ -10,11 +10,13 @@ import UIKit
 
 class HomeViewController:UIViewController {
     let contentView: HomeView
-    public weak var flowDelegate: HomeFlowDelegate?
-    
+    let viewModel: HomeViewModel
+    weak var flowDelegate: HomeFlowDelegate?
+
     init(contentView: HomeView, flowDelegate: HomeFlowDelegate){
         self.contentView = contentView
         self.flowDelegate = flowDelegate
+        self.viewModel = HomeViewModel()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -26,6 +28,7 @@ class HomeViewController:UIViewController {
         super.viewDidLoad()
         setup()
         setupNavigationBar()
+        checkForExistingData()
     }
     
     
@@ -33,12 +36,21 @@ class HomeViewController:UIViewController {
         self.view.addSubview(contentView)
         self.view.backgroundColor = Colors.gray600
         
-        //contentView.translatesAutoresizingMaskIntoConstraints = false
-        buildHierarchy()
+        contentView.delegate = self
+        setupConstraints()
     }
     
-    private func buildHierarchy(){
+    private func setupConstraints(){
         setupContentViewToBounds(contentView: contentView)
+    }
+    
+    private func checkForExistingData(){
+        if let user = UserDefaultsManager.loadUser(){
+            contentView.nameTextField.text = UserDefaultsManager.loadUserName()
+            if let userImage = UserDefaultsManager.loadUserPhoto(){
+                contentView.profileImage.image = userImage
+            }
+        }
     }
     
     private func setupNavigationBar(){
@@ -57,4 +69,38 @@ class HomeViewController:UIViewController {
     }
     
     
+}
+
+extension HomeViewController: HomeViewDelegate {
+    func didTapProfileImage() {
+        self.selectProfileImage()
+    }
+    
+   
+}
+
+extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    private func selectProfileImage(){
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
+        present(imagePicker, animated: true)
+    }
+    
+    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let edditedImage = info[.editedImage] as? UIImage {
+            contentView.profileImage.image = edditedImage
+            UserDefaultsManager.saveUserPhoto(image: edditedImage)
+        } else if let originalImage = info[.originalImage] as? UIImage {
+            contentView.profileImage.image = originalImage
+            UserDefaultsManager.saveUserPhoto(image: originalImage)
+        }
+        
+        dismiss(animated: true)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+    }
 }

@@ -10,4 +10,5 @@ import UIKit
 //Contrato responsavel pela comunicação entre View e Controller
 protocol LoginBottomSheetViewDelegate: AnyObject {
     func sendLoginData(user: String, password: String)
+    
 }
