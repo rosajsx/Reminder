@@ -61,6 +61,15 @@ extension ReminderFlowController: LoginBottomSheetFlowDelegate {
 
 //MARK: - Home
 extension ReminderFlowController: HomeFlowDelegate {
+    func navigateToRecipes() {
+        
+    }
+    
+    func logout() {
+        self.navigationController?.popViewController(animated: true)
+        self.openLoginBottomSheet()
+    }
+    
     
     
     
