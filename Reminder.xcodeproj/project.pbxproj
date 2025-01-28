@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9120202C2D4903630000B01B /* ButtonHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9120202B2D49035F0000B01B /* ButtonHomeView.swift */; };
 		913A51DC2D2D53490060CA59 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A51DB2D2D53490060CA59 /* HomeViewController.swift */; };
 		913A51DE2D2D53660060CA59 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A51DD2D2D53630060CA59 /* HomeView.swift */; };
 		913A51E02D2D53B90060CA59 /* HomeFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A51DF2D2D53B90060CA59 /* HomeFlowDelegate.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		23F5845B616E971B6B00BD84 /* Pods_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		585DB33905E82848FE73926A /* Pods-Reminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reminder.release.xcconfig"; path = "Target Support Files/Pods-Reminder/Pods-Reminder.release.xcconfig"; sourceTree = "<group>"; };
+		9120202B2D49035F0000B01B /* ButtonHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonHomeView.swift; sourceTree = "<group>"; };
 		913A51DB2D2D53490060CA59 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		913A51DD2D2D53630060CA59 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		913A51DF2D2D53B90060CA59 /* HomeFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlowDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9120202A2D4903440000B01B /* ButtonHomeView */ = {
+			isa = PBXGroup;
+			children = (
+				9120202B2D49035F0000B01B /* ButtonHomeView.swift */,
+			);
+			path = ButtonHomeView;
+			sourceTree = "<group>";
+		};
 		913A51D72D2D52F60060CA59 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +284,7 @@
 		B8F814E42D1B2F1500DBD722 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9120202A2D4903440000B01B /* ButtonHomeView */,
 				B8F814E52D1B2F2900DBD722 /* PaddedTextField.swift */,
 			);
 			path = Components;
@@ -420,6 +431,7 @@
 				913A51E22D2D55720060CA59 /* ViewController+Ext.swift in Sources */,
 				B88045612D1A069F00632383 /* LoginBottomSheetViewController.swift in Sources */,
 				B85839D52D2855AE00294964 /* ViewControllersFactory.swift in Sources */,
+				9120202C2D4903630000B01B /* ButtonHomeView.swift in Sources */,
 				91B5687D2D31715A00AD6B2C /* HomeViewDelegate.swift in Sources */,
 				B8E794B62D1F2F6E0046AAC1 /* ReminderFlowController.swift in Sources */,
 				B82688D32D13648E00306399 /* Text-Constants.swift in Sources */,

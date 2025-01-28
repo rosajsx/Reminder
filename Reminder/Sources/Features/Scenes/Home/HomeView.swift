@@ -71,6 +71,19 @@ class HomeView:UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    
+    let myPrescription: ButtonHomeView = {
+        let button = ButtonHomeView(icon: UIImage(named: "Paper"), title: "Minhas receitas", description: "Acompanhe os medicamentos e gerencie lembretes")
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    let newPrescription: ButtonHomeView = {
+        let button = ButtonHomeView(icon: UIImage(named: "pills"), title: "Nova receita", description: "Cadastre novos lembretes de receitas")
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
 
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -90,6 +103,8 @@ class HomeView:UIView {
         
         addSubview(contentBackground)
         contentBackground.addSubview(feedbackButton)
+        contentBackground.addSubview(myPrescription)
+        contentBackground.addSubview(newPrescription)
         setupConstraints()
         setupImageGesture()
     }
@@ -124,6 +139,18 @@ class HomeView:UIView {
             feedbackButton.bottomAnchor.constraint(equalTo: contentBackground.bottomAnchor, constant: -Metrics.medium),
             feedbackButton.leadingAnchor.constraint(equalTo: contentBackground.leadingAnchor, constant: Metrics.medium),
             feedbackButton.trailingAnchor.constraint(equalTo: contentBackground.leadingAnchor, constant: -Metrics.medium),
+            
+            
+            myPrescription.topAnchor.constraint(equalTo: contentBackground.topAnchor, constant: Metrics.huge),
+            myPrescription.leadingAnchor.constraint(equalTo: contentBackground.leadingAnchor, constant: Metrics.medium),
+            myPrescription.trailingAnchor.constraint(equalTo: contentBackground.trailingAnchor, constant: -Metrics.medium),
+            myPrescription.heightAnchor.constraint(equalToConstant: 112),
+            
+            
+            newPrescription.topAnchor.constraint(equalTo: myPrescription.bottomAnchor, constant: Metrics.medium),
+            newPrescription.leadingAnchor.constraint(equalTo: myPrescription.leadingAnchor),
+            newPrescription.trailingAnchor.constraint(equalTo: myPrescription.trailingAnchor),
+            newPrescription.heightAnchor.constraint(equalTo: myPrescription.heightAnchor),
             
             
         ])
