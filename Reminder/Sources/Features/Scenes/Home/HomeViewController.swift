@@ -65,6 +65,8 @@ class HomeViewController:UIViewController {
     @objc
     private func logoutAction(){
         UserDefaultsManager.removeUser()
+        UserDefaultsManager.removeUserName()
+        UserDefaultsManager.removeUserPhoto()
         self.flowDelegate?.logout()
     }
     

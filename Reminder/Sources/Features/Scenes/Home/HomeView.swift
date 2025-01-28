@@ -33,7 +33,6 @@ class HomeView:UIView {
     let profileImage: UIImageView = {
         let image = UIImageView()
         
-        image.image = UIImage(named: "user")
         image.isUserInteractionEnabled = true
         image.contentMode = .scaleAspectFit
         image.clipsToBounds = true

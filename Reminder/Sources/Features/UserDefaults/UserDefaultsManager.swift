@@ -27,9 +27,15 @@ class UserDefaultsManager {
     }
     
     static func saveUserPhoto(image: UIImage) {
-        if let encondedImage = image.pngData()?.base64EncodedString() {
-            UserDefaults.standard.set(encondedImage, forKey: userPhotoKey)
-            UserDefaults.standard.synchronize()
+        // Way that i did
+//        if let encondedImage = image.pngData()?.base64EncodedString() {
+//            UserDefaults.standard.set(encondedImage, forKey: userPhotoKey)
+//            UserDefaults.standard.synchronize()
+//        }
+        
+        // Class way
+        if let imageData = image.jpegData(compressionQuality: 1.0) {
+            UserDefaults.standard.set(imageData, forKey: userPhotoKey)
         }
     }
     
@@ -50,14 +56,16 @@ class UserDefaultsManager {
     }
     
     static func loadUserPhoto() -> UIImage? {
-        if let imageData = UserDefaults.standard.string(forKey: userPhotoKey) {
+        if let imageData = UserDefaults.standard.data(forKey: userPhotoKey) {
+            return UIImage(data: imageData)
             
-            if let decodedImage = Data(base64Encoded: imageData) {
-                return UIImage(data: decodedImage)
-            }
+            // Way that i did
+//            if let decodedImage = Data(base64Encoded: imageData) {
+//                return UIImage(data: decodedImage)
+//            }
             
         }
-       return nil
+       return UIImage(named: "user")
     }
     
     static func removeUser() {
