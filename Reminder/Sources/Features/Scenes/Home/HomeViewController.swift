@@ -29,6 +29,7 @@ class HomeViewController:UIViewController {
         setup()
         setupNavigationBar()
         checkForExistingData()
+        setupActionForNewRecipe()
     }
     
     
@@ -42,6 +43,12 @@ class HomeViewController:UIViewController {
     
     private func setupConstraints(){
         setupContentViewToBounds(contentView: contentView)
+    }
+    
+    private func setupActionForNewRecipe(){
+        contentView.newPrescription.tapAction = { [weak self] in
+            self?.didTapNewPrescriptionButton()
+        }
     }
     
     private func checkForExistingData(){
@@ -76,6 +83,10 @@ class HomeViewController:UIViewController {
 extension HomeViewController: HomeViewDelegate {
     func didTapProfileImage() {
         self.selectProfileImage()
+    }
+    
+    func didTapNewPrescriptionButton(){
+        flowDelegate?.navigateToRecipes()
     }
     
    

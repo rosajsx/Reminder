@@ -7,6 +7,6 @@
 
 import UIKit
 
-class HomeViewModel: AnyObject {
+class HomeViewModel {
     
 }

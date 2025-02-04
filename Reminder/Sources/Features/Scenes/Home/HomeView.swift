@@ -13,6 +13,7 @@ class HomeView:UIView {
     
     weak public var delegate: HomeViewDelegate? 
     
+    
     let profileBackground: UIView = {
         let view = UIView()
         view.backgroundColor = Colors.gray600

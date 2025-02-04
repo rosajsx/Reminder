@@ -11,6 +11,8 @@ import UIKit
 
 class ButtonHomeView: UIView {
     
+    var tapAction: (() -> Void)?
+    
     private let iconView: UIView = {
         let view = UIView()
         view.backgroundColor = Colors.gray600
@@ -54,7 +56,7 @@ class ButtonHomeView: UIView {
         let image = UIImageView(image: UIImage(systemName: "chevron.right"))
         image.tintColor = Colors.gray300
         image.contentMode = .scaleAspectFit
-         
+        
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -67,6 +69,7 @@ class ButtonHomeView: UIView {
         descriptionLabel.text = description
         
         setupSelf()
+        setupGesture()
         setupUI()
     }
     
@@ -116,4 +119,15 @@ class ButtonHomeView: UIView {
         ])
     }
     
+    private func setupGesture(){
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        self.addGestureRecognizer(tapGesture)
+        self.isUserInteractionEnabled = true
+        
+    }
+    
+    @objc
+     private func handleTap(){
+        tapAction?()
+     }
 }
