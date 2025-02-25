@@ -12,6 +12,7 @@ import SQLite3 // usando o import do 3, por que ele já vem nativamente.
 class DBHelper {
     static let shared = DBHelper()
     private var db: OpaquePointer?
+ 
     
     private init(){
         openDatabase()
@@ -22,6 +23,8 @@ class DBHelper {
         let fileUrl = try! FileManager.default
             .url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
             .appendingPathComponent("Reminder.sqlite")
+        
+        
         
         if sqlite3_open(fileUrl.path, &db)  != SQLITE_OK {
             print("Erro ao abrir o banco de dados")
@@ -50,6 +53,7 @@ class DBHelper {
         }
         
         sqlite3_finalize(statement)
+        
     }
     
     func insertReceipt(remedy: String, time: String, recurrency: String, takeNow: Bool){
@@ -65,6 +69,8 @@ class DBHelper {
             if sqlite3_step(statement) == SQLITE_DONE {
                 print("Receita inserida com sucesso.")
             } else {
+                let errMessage = String(cString: sqlite3_errmsg(db)!)
+                print(errMessage)
                 print("Falha ao inserir receita na tabela")
             }
         } else {

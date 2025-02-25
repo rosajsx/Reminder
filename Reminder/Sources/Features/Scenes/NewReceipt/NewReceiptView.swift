@@ -55,11 +55,39 @@ class NewReceiptView: UIView {
     }()
     
     
+    
+    
     let remedyInput = Input(title: "Remédio", placeholder: "Nome do medicamento")
     let timeInput = Input(title: "Horário", placeholder: "12:00")
     let recurrencyInput = Input(title: "Recorrência", placeholder: "Selecione")
     let takeNowCheckbox = Checkbox(title: "Tomar agora")
     
+    
+    let timePicker: UIDatePicker = {
+        let picker = UIDatePicker()
+        picker.datePickerMode = .time
+        picker.preferredDatePickerStyle = .wheels
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        
+        return picker
+    }()
+    
+    let recurrencyPicker: UIPickerView = {
+        let picker = UIPickerView()
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        
+        return picker
+    }()
+    
+    let recurrencyOptions = [
+        "De hora em hora",
+        "2 em 2 horas",
+        "4 em 4 horas",
+        "6 em 6 horas",
+        "8 em 8 horas",
+        "12 em 12 horas",
+        "Um por dia",
+    ]
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -80,6 +108,9 @@ class NewReceiptView: UIView {
         addSubview(recurrencyInput)
         addSubview(takeNowCheckbox)
         addSubview(addButton)
+        
+        setupTimeInput()
+        setupRecurrencyInput()
         setupConstraints()
     }
     
@@ -122,4 +153,66 @@ class NewReceiptView: UIView {
     }
     
     
+
+    
+    private func setupTimeInput(){
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didSelectTime))
+        
+        toolbar.setItems([doneButton], animated: true)
+        
+        timeInput.textField.inputView = timePicker
+        timeInput.textField.inputAccessoryView = toolbar
+    }
+    
+    
+    private func setupRecurrencyInput(){
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didSelectRecurrency))
+        toolbar.setItems([doneButton], animated: true)
+        
+        recurrencyInput.textField.inputView = recurrencyPicker
+        recurrencyInput.textField.inputAccessoryView = toolbar
+        
+        recurrencyPicker.delegate = self
+        recurrencyPicker.dataSource = self
+    }
+    
+    
+    @objc
+    private func didSelectTime(){
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        timeInput.textField.text = formatter.string(from: timePicker.date)
+        timeInput.textField.resignFirstResponder() //Atualizar e falar que eu terminei aquela ação.
+    }
+    
+    @objc
+    private func didSelectRecurrency(){
+        let selectedRow = recurrencyPicker.selectedRow(inComponent: 0)
+        recurrencyInput.textField.text = recurrencyOptions[selectedRow]
+        
+        recurrencyInput.textField.resignFirstResponder()
+       
+    }
+    
+    
+}
+
+extension NewReceiptView: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return recurrencyOptions.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return recurrencyOptions[row]
+    }
 }
