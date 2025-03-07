@@ -30,7 +30,7 @@ class NewReceiptView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
+    
     let descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = Typography.body
@@ -110,7 +110,9 @@ class NewReceiptView: UIView {
         addSubview(addButton)
         
         setupTimeInput()
+        setupObservers()
         setupRecurrencyInput()
+        validateInputs()
         setupConstraints()
     }
     
@@ -153,7 +155,7 @@ class NewReceiptView: UIView {
     }
     
     
-
+    
     
     private func setupTimeInput(){
         let toolbar = UIToolbar()
@@ -182,6 +184,28 @@ class NewReceiptView: UIView {
         recurrencyPicker.dataSource = self
     }
     
+    private func validateInputs() {
+        let isRemedyFilled = !(remedyInput.textField.text ?? "").isEmpty
+        let isTimeFilled = !(timeInput.textField.text ?? "").isEmpty
+        let isRecurrencyFilled = !(recurrencyInput.textField.text ?? "").isEmpty
+        
+        addButton.isEnabled = isRemedyFilled && isTimeFilled && isRecurrencyFilled
+        addButton.backgroundColor = addButton.isEnabled ? Colors.primaryRedBase : Colors.gray200
+    }
+    
+    
+    private func setupObservers(){
+        remedyInput.textField.addTarget(self, action: #selector(inputDidChange), for: .editingChanged)
+        timeInput.textField.addTarget(self, action: #selector(inputDidChange), for: .editingChanged)
+        recurrencyInput.textField.addTarget(self, action: #selector(inputDidChange), for: .editingChanged)
+    }
+    
+    
+    @objc
+    private func inputDidChange(){
+        validateInputs()
+    }
+    
     
     @objc
     private func didSelectTime(){
@@ -189,6 +213,8 @@ class NewReceiptView: UIView {
         formatter.timeStyle = .short
         timeInput.textField.text = formatter.string(from: timePicker.date)
         timeInput.textField.resignFirstResponder() //Atualizar e falar que eu terminei aquela ação.
+        
+        validateInputs()
     }
     
     @objc
@@ -197,6 +223,8 @@ class NewReceiptView: UIView {
         recurrencyInput.textField.text = recurrencyOptions[selectedRow]
         
         recurrencyInput.textField.resignFirstResponder()
+        
+        validateInputs()
        
     }
     
