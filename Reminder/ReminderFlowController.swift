@@ -68,6 +68,12 @@ extension ReminderFlowController: HomeFlowDelegate {
         
     }
     
+    func navigateToMyReceipts() {
+        let myReceiptsViewController = viewControllerFactory.makeMyReceiptsViewController(flowDelegate: self)
+        self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.pushViewController(myReceiptsViewController, animated: true)
+    }
+    
     func logout() {
         self.navigationController?.popViewController(animated: true)
         self.openLoginBottomSheet()
@@ -76,4 +82,12 @@ extension ReminderFlowController: HomeFlowDelegate {
     
     
     
+}
+
+extension ReminderFlowController: MyReceiptsViewFlowDelegate {
+    func navigateToAddReceipt() {
+        let recipesViewController = viewControllerFactory.makeNewReceiptController()
+        self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.pushViewController(recipesViewController, animated: true)
+    }
 }
