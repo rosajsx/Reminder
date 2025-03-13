@@ -27,6 +27,7 @@
 		B86156172D7B27A0000F384C /* MyReceiptsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86156162D7B27A0000F384C /* MyReceiptsView.swift */; };
 		B86156192D7B29AA000F384C /* MyReceiptsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86156182D7B29AA000F384C /* MyReceiptsViewController.swift */; };
 		B861561B2D7B88F5000F384C /* MyReceiptsViewFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B861561A2D7B88E9000F384C /* MyReceiptsViewFlowDelegate.swift */; };
+		B875C8012D826BA10041CECD /* RemedyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875C8002D826B9F0041CECD /* RemedyCell.swift */; };
 		B88045612D1A069F00632383 /* LoginBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88045602D1A069F00632383 /* LoginBottomSheetViewController.swift */; };
 		B88045632D1A073800632383 /* LoginBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88045622D1A073800632383 /* LoginBottomSheetView.swift */; };
 		B88456122D11C86600495F47 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88456112D11C86600495F47 /* SplashViewController.swift */; };
@@ -72,6 +73,7 @@
 		B86156162D7B27A0000F384C /* MyReceiptsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceiptsView.swift; sourceTree = "<group>"; };
 		B86156182D7B29AA000F384C /* MyReceiptsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceiptsViewController.swift; sourceTree = "<group>"; };
 		B861561A2D7B88E9000F384C /* MyReceiptsViewFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceiptsViewFlowDelegate.swift; sourceTree = "<group>"; };
+		B875C8002D826B9F0041CECD /* RemedyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemedyCell.swift; sourceTree = "<group>"; };
 		B88045602D1A069F00632383 /* LoginBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetViewController.swift; sourceTree = "<group>"; };
 		B88045622D1A073800632383 /* LoginBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetView.swift; sourceTree = "<group>"; };
 		B88456112D11C86600495F47 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -218,11 +220,20 @@
 		B86156152D7B278B000F384C /* MyReceipts */ = {
 			isa = PBXGroup;
 			children = (
+				B875C7FF2D826B980041CECD /* UITableViewCell */,
 				B861561A2D7B88E9000F384C /* MyReceiptsViewFlowDelegate.swift */,
 				B86156162D7B27A0000F384C /* MyReceiptsView.swift */,
 				B86156182D7B29AA000F384C /* MyReceiptsViewController.swift */,
 			);
 			path = MyReceipts;
+			sourceTree = "<group>";
+		};
+		B875C7FF2D826B980041CECD /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B875C8002D826B9F0041CECD /* RemedyCell.swift */,
+			);
+			path = UITableViewCell;
 			sourceTree = "<group>";
 		};
 		B880455F2D1A068800632383 /* LoginBottomSheet */ = {
@@ -521,6 +532,7 @@
 				B82688D32D13648E00306399 /* Text-Constants.swift in Sources */,
 				B8F814E32D1B257000DBD722 /* String+Ext.swift in Sources */,
 				91E844EC2D31AF1D00201A18 /* HomeViewModel.swift in Sources */,
+				B875C8012D826BA10041CECD /* RemedyCell.swift in Sources */,
 				B8F814E82D1B6EE100DBD722 /* LoginBottomSheetViewDelegate.swift in Sources */,
 				B89309732D0F6E5A00347293 /* SceneDelegate.swift in Sources */,
 				B85839D32D28554300294964 /* ViewControllersFactoryProtocol.swift in Sources */,
