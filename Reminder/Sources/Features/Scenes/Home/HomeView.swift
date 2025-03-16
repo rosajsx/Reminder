@@ -115,9 +115,9 @@ class HomeView:UIView {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             profileBackground.topAnchor.constraint(equalTo: topAnchor),
-            profileBackground.leadingAnchor.constraint(equalTo: leadingAnchor),
-            profileBackground.trailingAnchor.constraint(equalTo: trailingAnchor),
-            profileBackground.heightAnchor.constraint(equalToConstant: Metrics.backgroundProfileSize),
+             profileBackground.heightAnchor.constraint(equalToConstant: Metrics.backgroundProfileSize),
+             profileBackground.leadingAnchor.constraint(equalTo: leadingAnchor),
+             profileBackground.trailingAnchor.constraint(equalTo: trailingAnchor),
             
             profileImage.topAnchor.constraint(equalTo: profileBackground.topAnchor, constant: Metrics.huge),
             profileImage.leadingAnchor.constraint(equalTo: profileBackground.leadingAnchor, constant: Metrics.medium),
@@ -139,18 +139,18 @@ class HomeView:UIView {
             feedbackButton.heightAnchor.constraint(equalToConstant: Metrics.buttonSize),
             feedbackButton.bottomAnchor.constraint(equalTo: contentBackground.bottomAnchor, constant: -Metrics.medium),
             feedbackButton.leadingAnchor.constraint(equalTo: contentBackground.leadingAnchor, constant: Metrics.medium),
-            feedbackButton.trailingAnchor.constraint(equalTo: contentBackground.leadingAnchor, constant: -Metrics.medium),
+            feedbackButton.trailingAnchor.constraint(equalTo: contentBackground.trailingAnchor, constant: -Metrics.medium),
             
             
             myPrescription.topAnchor.constraint(equalTo: contentBackground.topAnchor, constant: Metrics.huge),
-            myPrescription.leadingAnchor.constraint(equalTo: contentBackground.leadingAnchor, constant: Metrics.medium),
-            myPrescription.trailingAnchor.constraint(equalTo: contentBackground.trailingAnchor, constant: -Metrics.medium),
+            myPrescription.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.medium),
+            myPrescription.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.medium),
             myPrescription.heightAnchor.constraint(equalToConstant: 112),
             
             
             newPrescription.topAnchor.constraint(equalTo: myPrescription.bottomAnchor, constant: Metrics.medium),
-            newPrescription.leadingAnchor.constraint(equalTo: myPrescription.leadingAnchor),
-            newPrescription.trailingAnchor.constraint(equalTo: myPrescription.trailingAnchor),
+            newPrescription.leadingAnchor.constraint(equalTo: contentBackground.leadingAnchor, constant: Metrics.medium),
+            newPrescription.trailingAnchor.constraint(equalTo: contentBackground.trailingAnchor, constant: -Metrics.medium),
             newPrescription.heightAnchor.constraint(equalTo: myPrescription.heightAnchor),
             
             

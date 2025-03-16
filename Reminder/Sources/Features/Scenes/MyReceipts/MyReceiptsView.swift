@@ -45,6 +45,8 @@ class MyReceiptsView: UIView {
         return button
     }()
     
+
+    
     let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Minhas receitas"
@@ -77,6 +79,16 @@ class MyReceiptsView: UIView {
         
         return view
     }()
+    
+    
+    let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return tableView
+    }()
 
     
 
@@ -97,6 +109,7 @@ class MyReceiptsView: UIView {
         headerBgackground.addSubview(titleLabel)
         headerBgackground.addSubview(subTitleLabel)
         addSubview(contentBackground)
+        contentBackground.addSubview(tableView)
         setupConstraints()
     }
     
@@ -126,9 +139,15 @@ class MyReceiptsView: UIView {
             
             
             contentBackground.topAnchor.constraint(equalTo: headerBgackground.bottomAnchor, constant: -Metrics.small),
-            contentBackground.leadingAnchor.constraint(equalTo: headerBgackground.leadingAnchor),
+            contentBackground.leadingAnchor.constraint(equalTo: headerBgackground.leadingAnchor), 
             contentBackground.trailingAnchor.constraint(equalTo: headerBgackground.trailingAnchor),
             contentBackground.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            tableView.topAnchor.constraint(equalTo: contentBackground.topAnchor, constant: Metrics.medium),
+            tableView.leadingAnchor.constraint(equalTo: contentBackground.leadingAnchor, constant: Metrics.medium),
+            tableView.trailingAnchor.constraint(equalTo: contentBackground.trailingAnchor, constant: -Metrics.medium),
+            tableView.bottomAnchor.constraint(equalTo: contentBackground.bottomAnchor)
+            
         ])
     }
     

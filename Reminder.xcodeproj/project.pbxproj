@@ -15,6 +15,8 @@
 		91B5687D2D31715A00AD6B2C /* HomeViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5687C2D31715A00AD6B2C /* HomeViewDelegate.swift */; };
 		91E844EC2D31AF1D00201A18 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E844EB2D31AF1900201A18 /* HomeViewModel.swift */; };
 		9422FA99F565C721B6E7736B /* Pods_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AF38A5E3D8CCA5B5F59EBC /* Pods_Reminder.framework */; };
+		B80B16792D84A46D00A12B6C /* MyReceiptsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80B16782D84A46300A12B6C /* MyReceiptsViewModel.swift */; };
+		B80B167B2D84A63C00A12B6C /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80B167A2D84A63900A12B6C /* Medicine.swift */; };
 		B82688D12D1312DC00306399 /* Colors-constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82688D02D1312DC00306399 /* Colors-constants.swift */; };
 		B82688D32D13648E00306399 /* Text-Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82688D22D13648E00306399 /* Text-Constants.swift */; };
 		B82688D52D1366B900306399 /* Metrics-constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82688D42D1366B900306399 /* Metrics-constants.swift */; };
@@ -27,6 +29,7 @@
 		B86156172D7B27A0000F384C /* MyReceiptsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86156162D7B27A0000F384C /* MyReceiptsView.swift */; };
 		B86156192D7B29AA000F384C /* MyReceiptsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86156182D7B29AA000F384C /* MyReceiptsViewController.swift */; };
 		B861561B2D7B88F5000F384C /* MyReceiptsViewFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B861561A2D7B88E9000F384C /* MyReceiptsViewFlowDelegate.swift */; };
+		B870735D2D875711005B29F3 /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = B870735C2D875711005B29F3 /* success.json */; };
 		B875C8012D826BA10041CECD /* RemedyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875C8002D826B9F0041CECD /* RemedyCell.swift */; };
 		B88045612D1A069F00632383 /* LoginBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88045602D1A069F00632383 /* LoginBottomSheetViewController.swift */; };
 		B88045632D1A073800632383 /* LoginBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88045622D1A073800632383 /* LoginBottomSheetView.swift */; };
@@ -61,6 +64,8 @@
 		913A51E12D2D556A0060CA59 /* ViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Ext.swift"; sourceTree = "<group>"; };
 		91B5687C2D31715A00AD6B2C /* HomeViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewDelegate.swift; sourceTree = "<group>"; };
 		91E844EB2D31AF1900201A18 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		B80B16782D84A46300A12B6C /* MyReceiptsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceiptsViewModel.swift; sourceTree = "<group>"; };
+		B80B167A2D84A63900A12B6C /* Medicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
 		B82688D02D1312DC00306399 /* Colors-constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors-constants.swift"; sourceTree = "<group>"; };
 		B82688D22D13648E00306399 /* Text-Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text-Constants.swift"; sourceTree = "<group>"; };
 		B82688D42D1366B900306399 /* Metrics-constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Metrics-constants.swift"; sourceTree = "<group>"; };
@@ -73,6 +78,7 @@
 		B86156162D7B27A0000F384C /* MyReceiptsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceiptsView.swift; sourceTree = "<group>"; };
 		B86156182D7B29AA000F384C /* MyReceiptsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceiptsViewController.swift; sourceTree = "<group>"; };
 		B861561A2D7B88E9000F384C /* MyReceiptsViewFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceiptsViewFlowDelegate.swift; sourceTree = "<group>"; };
+		B870735C2D875711005B29F3 /* success.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		B875C8002D826B9F0041CECD /* RemedyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemedyCell.swift; sourceTree = "<group>"; };
 		B88045602D1A069F00632383 /* LoginBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetViewController.swift; sourceTree = "<group>"; };
 		B88045622D1A073800632383 /* LoginBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetView.swift; sourceTree = "<group>"; };
@@ -158,6 +164,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		B80B16772D84A45B00A12B6C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B80B16782D84A46300A12B6C /* MyReceiptsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		B82688CF2D1312C600306399 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +218,7 @@
 		B85839D62D285E0900294964 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B80B167A2D84A63900A12B6C /* Medicine.swift */,
 				B85839D72D285E1700294964 /* User.swift */,
 			);
 			path = Model;
@@ -217,9 +232,18 @@
 			path = UserDefaults;
 			sourceTree = "<group>";
 		};
+		B859D0E22D87518F007E7C3B /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				B870735C2D875711005B29F3 /* success.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
 		B86156152D7B278B000F384C /* MyReceipts */ = {
 			isa = PBXGroup;
 			children = (
+				B80B16772D84A45B00A12B6C /* ViewModel */,
 				B875C7FF2D826B980041CECD /* UITableViewCell */,
 				B861561A2D7B88E9000F384C /* MyReceiptsViewFlowDelegate.swift */,
 				B86156162D7B27A0000F384C /* MyReceiptsView.swift */,
@@ -350,6 +374,7 @@
 		B8F814DA2D1B23B400DBD722 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B859D0E22D87518F007E7C3B /* Lottie */,
 				B89309792D0F6E5A00347293 /* Assets.xcassets */,
 				B8F814DB2D1B240500DBD722 /* Localizable.strings */,
 			);
@@ -446,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B893097A2D0F6E5A00347293 /* Assets.xcassets in Resources */,
+				B870735D2D875711005B29F3 /* success.json in Resources */,
 				B8F814DD2D1B240500DBD722 /* Localizable.strings in Resources */,
 				B8E794B42D1EFC840046AAC1 /* GoogleService-Info.plist in Resources */,
 			);
@@ -501,6 +527,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8EDF1462D5167000076E922 /* Input.swift in Sources */,
+				B80B167B2D84A63C00A12B6C /* Medicine.swift in Sources */,
 				B8E794BB2D1F33E40046AAC1 /* SplashViewFlowDelegate.swift in Sources */,
 				B8E794B22D1EF5D40046AAC1 /* LoginBottomSheetViewModel.swift in Sources */,
 				B8E794B82D1F315B0046AAC1 /* LoginBottomSheetFlowDelegate.swift in Sources */,
@@ -515,6 +542,7 @@
 				B82688D12D1312DC00306399 /* Colors-constants.swift in Sources */,
 				B85839DB2D285E8F00294964 /* UserDefaultsManager.swift in Sources */,
 				B8F814E62D1B2F2900DBD722 /* PaddedTextField.swift in Sources */,
+				B80B16792D84A46D00A12B6C /* MyReceiptsViewModel.swift in Sources */,
 				B88456142D11C96400495F47 /* SplashView.swift in Sources */,
 				B88045632D1A073800632383 /* LoginBottomSheetView.swift in Sources */,
 				B84F96F62D677788000F4A89 /* DBHelper.swift in Sources */,

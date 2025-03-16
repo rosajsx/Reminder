@@ -7,11 +7,21 @@
 
 import Foundation
 import UIKit
-
+import Lottie
 
 class NewReceiptController: UIViewController {
     private let newReceiptView = NewReceiptView()
     private let viewModel = NewReceiptViewModel()
+    
+    private let successAnimationView: LottieAnimationView = {
+        let animationView = LottieAnimationView(name: "success")
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .playOnce
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        animationView.isHidden = true
+        
+        return animationView
+    }()
     
     
     override func viewDidLoad() {
@@ -24,7 +34,8 @@ class NewReceiptController: UIViewController {
     private func setupView(){
         view.backgroundColor = Colors.gray800
         view.addSubview(newReceiptView)
-        
+        view.addSubview(successAnimationView)
+        self.navigationItem.hidesBackButton = true
         setupConstraints()
     }
     
@@ -35,6 +46,19 @@ class NewReceiptController: UIViewController {
     
     private func setupConstraints(){
         setupContentViewToBounds(contentView: newReceiptView)
+        NSLayoutConstraint.activate([
+            successAnimationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            successAnimationView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+           
+        ])
+    }
+    
+    
+    func clearFields(){
+        newReceiptView.remedyInput.textField.text = ""
+        newReceiptView.recurrencyInput.textField.text = ""
+        newReceiptView.timeInput.textField.text = ""
+        newReceiptView.addButton.isEnabled = false
     }
     
     @objc
@@ -57,7 +81,19 @@ class NewReceiptController: UIViewController {
                              recurrency: recurrency,
                              takeNow: takeNow)
         
+        playSuccessAnimation()
         print("Receita \(remedy) adicionada")
+    }
+    
+    
+    private func playSuccessAnimation(){
+        successAnimationView.isHidden = false
+        successAnimationView.play { [weak self] finished in
+            if(finished) {
+                self?.clearFields()
+                self?.successAnimationView.isHidden = true
+            }
+        }
     }
     
 }

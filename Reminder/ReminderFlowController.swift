@@ -84,6 +84,7 @@ extension ReminderFlowController: HomeFlowDelegate {
     
 }
 
+//MARK: - MyReceipts
 extension ReminderFlowController: MyReceiptsViewFlowDelegate {
     func navigateToAddReceipt() {
         let recipesViewController = viewControllerFactory.makeNewReceiptController()

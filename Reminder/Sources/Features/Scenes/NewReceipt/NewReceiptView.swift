@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 
-
 class NewReceiptView: UIView {
     let backButton: UIButton = {
         let button = UIButton()
@@ -46,7 +45,7 @@ class NewReceiptView: UIView {
         let button = UIButton()
         button.setTitle("+ Adicionar", for: .normal)
         button.titleLabel?.font = Typography.subHeading
-        button.backgroundColor = Colors.primaryRedBase
+        button.backgroundColor = button.isEnabled ? Colors.primaryRedBase : Colors.gray500
         button.layer.cornerRadius = 12
         button.setTitleColor(Colors.gray800, for: .normal)
         
@@ -54,8 +53,7 @@ class NewReceiptView: UIView {
         return button
     }()
     
-    
-    
+
     
     let remedyInput = Input(title: "Remédio", placeholder: "Nome do medicamento")
     let timeInput = Input(title: "Horário", placeholder: "12:00")
@@ -190,7 +188,7 @@ class NewReceiptView: UIView {
         let isRecurrencyFilled = !(recurrencyInput.textField.text ?? "").isEmpty
         
         addButton.isEnabled = isRemedyFilled && isTimeFilled && isRecurrencyFilled
-        addButton.backgroundColor = addButton.isEnabled ? Colors.primaryRedBase : Colors.gray200
+        addButton.backgroundColor = addButton.isEnabled ? Colors.primaryRedBase : Colors.gray500
     }
     
     

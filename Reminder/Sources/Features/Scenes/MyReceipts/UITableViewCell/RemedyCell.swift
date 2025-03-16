@@ -13,6 +13,8 @@ class RemedyCell: UITableViewCell {
     
     static let identifier = "RemedyCell"
     
+    var onDelete: (() -> Void)?
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = Typography.subHeading
@@ -77,6 +79,7 @@ class RemedyCell: UITableViewCell {
         let image = UIImage(named: "trash")
         button.setImage(image, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(trashButtonTapped), for: .touchUpInside)
         
         return button
     }()
@@ -103,7 +106,7 @@ class RemedyCell: UITableViewCell {
         timeBackgroundView.addSubview(watchIcon)
         timeBackgroundView.addSubview(timeLabel)
         
-        recurrencyBackgroundView.addSubview(watchIcon)
+        recurrencyBackgroundView.addSubview(recurrencyIcon)
         recurrencyBackgroundView.addSubview(recurrencyLabel)
      
         
@@ -120,7 +123,7 @@ class RemedyCell: UITableViewCell {
             trashButton.heightAnchor.constraint(equalToConstant: 16),
             trashButton.widthAnchor.constraint(equalToConstant: 16),
             
-            timeBackgroundView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Metrics.small),
+            timeBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Metrics.small),
             timeBackgroundView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Metrics.medium),
             timeBackgroundView.heightAnchor.constraint(equalToConstant: 28),
 
@@ -134,16 +137,17 @@ class RemedyCell: UITableViewCell {
             timeLabel.trailingAnchor.constraint(equalTo: timeBackgroundView.trailingAnchor, constant: -Metrics.small),
             
             recurrencyBackgroundView.centerYAnchor.constraint(equalTo: timeBackgroundView.centerYAnchor),
-            recurrencyBackgroundView.leadingAnchor.constraint(equalTo: timeBackgroundView.trailingAnchor, constant: -Metrics.tiny),
+            recurrencyBackgroundView.leadingAnchor.constraint(equalTo: timeBackgroundView.trailingAnchor, constant: Metrics.tiny),
             recurrencyBackgroundView.heightAnchor.constraint(equalToConstant: 28),
             
             recurrencyIcon.leadingAnchor.constraint(equalTo: recurrencyBackgroundView.leadingAnchor, constant: Metrics.small),
             recurrencyIcon.centerYAnchor.constraint(equalTo: recurrencyBackgroundView.centerYAnchor),
             recurrencyIcon.heightAnchor.constraint(equalToConstant: 16),
             recurrencyIcon.widthAnchor.constraint(equalToConstant: 16),
+
             
-            recurrencyLabel.leadingAnchor.constraint(equalTo: watchIcon.trailingAnchor, constant: -Metrics.tiny),
-            recurrencyLabel.centerYAnchor.constraint(equalTo: watchIcon.centerYAnchor),
+            recurrencyLabel.leadingAnchor.constraint(equalTo: recurrencyIcon.trailingAnchor, constant: Metrics.tiny),
+            recurrencyLabel.centerYAnchor.constraint(equalTo: recurrencyIcon.centerYAnchor),
             recurrencyLabel.trailingAnchor.constraint(equalTo: recurrencyBackgroundView.trailingAnchor, constant: -Metrics.small),
             
             contentView.bottomAnchor.constraint(equalTo: timeBackgroundView.bottomAnchor, constant: Metrics.medium)
@@ -158,4 +162,9 @@ class RemedyCell: UITableViewCell {
         recurrencyLabel.text = recurrency
     }
 
+    @objc
+    private func trashButtonTapped(){
+        onDelete?()
+    }
+    
 }
