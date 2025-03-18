@@ -111,6 +111,7 @@ extension MyReceiptsViewController: UITableViewDataSource {
                     self.medicines.remove(at: actualIndexPath.row)
                     
                     tableView.deleteSections(IndexSet(integer: actualIndexPath.section), with: .automatic)
+                    viewModel.removeNotifications(for: self.medicines[actualIndexPath.section].remedy)
                     tableView.reloadData()
                 }
             }else {
