@@ -107,11 +107,13 @@ extension MyReceiptsViewController: UITableViewDataSource {
             guard let self = self else {return}
             if let actualIndexPath = tableView.indexPath(for: cell) {
                 if(actualIndexPath.section < self.medicines.count ) {
-                    self.viewModel.deleteReceipt(byId: self.medicines[actualIndexPath.section].id)
+                    let medicine = self.medicines[actualIndexPath.section]
+                    self.viewModel.deleteReceipt(byId: medicine.id)
                     self.medicines.remove(at: actualIndexPath.row)
-                    
                     tableView.deleteSections(IndexSet(integer: actualIndexPath.section), with: .automatic)
-                    viewModel.removeNotifications(for: self.medicines[actualIndexPath.section].remedy)
+                    viewModel.removeNotifications(for: medicine.remedy)
+                    
+
                     tableView.reloadData()
                 }
             }else {
