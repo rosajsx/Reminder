@@ -8,27 +8,27 @@
 import Foundation
 import UIKit
 
-class HomeViewController:UIViewController {
+class HomeViewController: UIViewController {
     let contentView: HomeView
     let viewModel: HomeViewModel
     weak var flowDelegate: HomeFlowDelegate?
 
-    init(contentView: HomeView, flowDelegate: HomeFlowDelegate){
+    init(contentView: HomeView, flowDelegate: HomeFlowDelegate) {
         self.contentView = contentView
         self.flowDelegate = flowDelegate
         self.viewModel = HomeViewModel()
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = false
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -37,87 +37,84 @@ class HomeViewController:UIViewController {
         setupActionForNewRecipe()
         setupActionForMyReceipts()
     }
-    
-    
-    private func setup(){
+
+    private func setup() {
         self.view.addSubview(contentView)
         self.view.backgroundColor = Colors.gray600
-        
+
         contentView.delegate = self
         setupConstraints()
     }
-    
-    private func setupConstraints(){
+
+    private func setupConstraints() {
         setupContentViewToBounds(contentView: contentView)
     }
-    
-    private func setupActionForNewRecipe(){
+
+    private func setupActionForNewRecipe() {
         contentView.newPrescription.tapAction = { [weak self] in
             self?.didTapNewPrescriptionButton()
         }
     }
-    
-    private func setupActionForMyReceipts(){
+
+    private func setupActionForMyReceipts() {
         contentView.myPrescription.tapAction = { [weak self] in
             self?.didTapMyReceiptsButton()
         }
     }
-    
-    private func checkForExistingData(){
-        if let user = UserDefaultsManager.loadUser(){
+
+    private func checkForExistingData() {
+        if let user = UserDefaultsManager.loadUser() {
             contentView.nameTextField.text = UserDefaultsManager.loadUserName()
-            if let userImage = UserDefaultsManager.loadUserPhoto(){
+            if let userImage = UserDefaultsManager.loadUserPhoto() {
                 contentView.profileImage.image = userImage
             }
         }
     }
-    
-    private func setupNavigationBar(){
+
+    private func setupNavigationBar() {
         self.navigationController?.navigationBar.isHidden = false
         self.navigationItem.hidesBackButton = true
-        
+
         let logoutButton = UIBarButtonItem(image: UIImage(named: "log-out-icon"), style: .plain, target: self, action: #selector(logoutAction))
         logoutButton.tintColor = Colors.primaryRedBase
         navigationItem.rightBarButtonItem = logoutButton
     }
-    
+
     @objc
-    private func logoutAction(){
+    private func logoutAction() {
         UserDefaultsManager.removeUser()
         UserDefaultsManager.removeUserName()
         UserDefaultsManager.removeUserPhoto()
         self.flowDelegate?.logout()
     }
-    
-    
+
 }
 
 extension HomeViewController: HomeViewDelegate {
     func didTapProfileImage() {
         self.selectProfileImage()
     }
-    
-    func didTapNewPrescriptionButton(){
+
+    func didTapNewPrescriptionButton() {
         flowDelegate?.navigateToRecipes()
     }
-    
-    func didTapMyReceiptsButton(){
+
+    func didTapMyReceiptsButton() {
         flowDelegate?.navigateToMyReceipts()
     }
-    
-   
+
 }
 
 extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    private func selectProfileImage(){
+    private func selectProfileImage() {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
         present(imagePicker, animated: true)
     }
-    
-    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let edditedImage = info[.editedImage] as? UIImage {
             contentView.profileImage.image = edditedImage
             UserDefaultsManager.saveUserPhoto(image: edditedImage)
@@ -125,10 +122,10 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
             contentView.profileImage.image = originalImage
             UserDefaultsManager.saveUserPhoto(image: originalImage)
         }
-        
+
         dismiss(animated: true)
     }
-    
+
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true)
     }

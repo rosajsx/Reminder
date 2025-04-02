@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 public protocol MyReceiptsViewFlowDelegate: AnyObject {
     func navigateToAddReceipt()
 }
